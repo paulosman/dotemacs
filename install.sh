@@ -5,9 +5,11 @@ targets=".emacs .emacs.d"
 for file in $targets; do
     overwrite=false
     backup=false
+    overwrite_all=false
+    backup_all=false
     
     target="$HOME/$file"
-    
+
     if [ -e "$target" ] || [ -h "$target" ]; then
         if ! $overwrite_all && ! $backup_all; then
             while true; do
@@ -31,7 +33,7 @@ for file in $targets; do
         fi
 
         if $backup || $backup_all; then
-            mv $target "$HOME/$target.backup"
+            mv $target "$target.backup"
         fi
     fi
 
