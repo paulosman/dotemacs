@@ -5,7 +5,7 @@
 
 (defvar my-marmalade-packages '(better-defaults paredit idle-highlight-mode ido-ubiquitous
                                       find-file-in-project magit smex scpaste
-                                      go-mode scala-mode))
+                                      go-mode scala-mode haskell-mode))
 
 (package-initialize)
 (dolist (p my-marmalade-packages)
