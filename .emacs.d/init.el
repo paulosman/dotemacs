@@ -7,10 +7,15 @@
                                       find-file-in-project magit smex scpaste
                                       go-mode scala-mode haskell-mode))
 
+(defvar my-melpa-packages '(sbt-mode))
+
 (package-initialize)
+(package-refresh-contents)
+
 (dolist (p my-marmalade-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-(unless (package-installed-p 'sbt-mode)
-  (package-refresh-contents) (package-install 'sbt-mode))
+(dolist (p my-melpa-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
